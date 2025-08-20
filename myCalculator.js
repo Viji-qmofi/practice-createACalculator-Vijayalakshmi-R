@@ -16,7 +16,9 @@ calcSqrt : function(num) {
 
 //task 4
 calcMinMax : function (arr) {
-      console.log(Math.min(...arr), Math.max(...arr));
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+      return{max,min};
 },
 
 //task 5
@@ -39,6 +41,7 @@ console.log(` User Choices:
 6. Round\n `);
 
 // Get User choices.
+
 const inputSel = require('readline-sync');
 
 let userChoice;// = inputSel.question("Enter any of your choices from the above list\n");
@@ -63,8 +66,10 @@ else if(userChoice === "Square Root"){
 
 else if(userChoice === "Max and Min"){
     const numArray = [3, 78, -12, 0.5, 27];
-    calculatorObj.calcMinMax(numArray);
- 
+    const { min, max } = calculatorObj.calcMinMax(numArray);
+    console.log("Max Number", max);
+    console.log("Min Number", min);
+    
 }
 
 else if(userChoice === "Random"){
